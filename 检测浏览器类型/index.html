@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Browser</h2>
+        <div class="logos">
+            <img class="chrome" src="./logo/chrome.png" alt="Chrome" title="Google Chrome" >
+            <img src="./logo/edge.png" alt="Edge" title="Edge" class="edge">
+            <img src="./logo/firefox.png" alt="Firefox" title="Firefox" class="firefox">
+            <img src="./logo/opera.png" alt="Opera" title="Opera" class="opera">
+            <img src="./logo/safari.png" alt="Safari" title="Safari" class="safari">
+            
+        </div>
+    </div>
+    <script>
+        let userAgent=navigator.userAgent
+        let browser;
+        if(userAgent.match(/edg/i)){
+            browser="edge"
+        }else if(userAgent.match(/firefox|fxios/i)){
+            browser="firefox"
+        }else if(userAgent.match(/opr\//i)){
+            browser="opera"
+        }else if(userAgent.match(/chrome|chromium|crios/i)){
+            browser="chrome"
+        }else if(userAgent.match(/safari/i)){
+            browser="safari"
+        }else{
+            alert("无法检测浏览器")
+        }
+
+        const logo=document.querySelector(`.logos .${browser}`)
+        if(logo){
+            logo.style.opacity="1";
+        }
+    </script>
+</body>
+</html>

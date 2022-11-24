@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //call
+        //函数本身就是一种对象，就能有自己的属性和方法
+        //call方法本身是一种执行函数的方法
+        function fn(a,b){
+            console.log(this);
+            console.log(a + b);
+        }
+        var Test={
+            name:"zs"
+        }
+        //call方法在调用函数的时候，有两个功能
+        //1.更改函数内部的this指向
+        //2.调用函数执行内部代码
+        //参数：第一个参数用来指定this,第二个及以后就是传的实参
+        fn.call(Test,3,4);
+
+    </script>
+</body>
+</html>

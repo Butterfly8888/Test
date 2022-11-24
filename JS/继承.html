@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //父级的对象
+        var laoli={
+            name:"laoli",
+            money:100000,
+            house:["商铺","住宅"],
+            tech:function(){
+                console.log("厨艺");
+            }
+        };
+        //子级的对象
+        var xiaoli={
+            name:"xiaoli"
+        }
+        //对象之间进行继承，使用for   in
+        // for(var k in laoli){
+        //     //子级有的属性不需要继承
+        //     if(xiaoli[k]){
+        //         continue;
+        //     }
+        //     xiaoli[k]=laoli[k];
+        // }
+        //封装一个对象之间继承的函数
+        function extend(parent, child){
+            for(var k in parent){
+            //子级有的属性不需要继承
+            if(child[k]){
+                continue;
+            }
+            child[k]=parent[k];
+            }
+        }
+        extend(laoli,xiaoli);
+        console.log(xiaoli);
+    </script>
+</body>
+</html>

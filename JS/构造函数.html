@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //自定义构造函数
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+            this.sayName=function(){
+                console.log(this.name);
+            }
+        }
+        //通过自定义构造函数生成对象实例
+        //new 关键字的用途
+        //1.创建一个新对象
+        //2.将函数内部的this指向了这个新对象
+        //3.执行构造函数内部的代码
+        //默认将新对象作为返回值
+        var person1=new Person("Bob",18);
+        var person2=new Person("Mike",20);
+        person1.sayName();
+        person2.sayName();
+    </script>
+</body>
+</html>

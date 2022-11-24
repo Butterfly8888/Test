@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            opacity: 0.5;
+            background-color: #0f0;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="开始" id="start">
+    <div class="box" id="box"></div>
+    <script>
+        var start=document.getElementById("start");
+        var box=document.getElementById("box");
+        
+        //调用参数
+        start.onclick=function(){
+            animate(box,{left:400,width:300,height:200,opacity:1},2000);
+        }
+        
+
+        //函数参数
+        //参数1：元素对象，他要进行运动
+        //参数2：结束位置，以对象数据方式传递
+        //参数3：总时间
+        //自定义运动函数
+        function animate(ele,end,time){
+            //已知结束位置，总时间，时间间隔，缺少起始位置
+            //起始位置要根据结束位置提供的属性进行获取
+            //起始位置的对象，需要先定义一个空对象
+            var now={};
+            //end对象遍历，获取属性名
+            for(var k in end){
+                //通过结束位置找到开始位置的值
+                now[k]=parseFloat(window.getComputedStyle(ele)[k]);
+            }
+            // console.log(start);
+            //自定义时间间隔
+            var interval=50;
+            //计算总次数
+            var maxCount=time/interval;
+            //次数累加器
+            var count=0;
+            //对象中每个属性都有自己的步长，也可以放到封装步长的对象中
+            var step={};
+            //遍历结束对象，计算每个属性的步长
+            for(var k in end){
+                step[k]=(end[k]-now[k])/maxCount;
+            }
+            // console.log(step);
+            //==========================准备工作结束，开启定时器========================
+            var timer;
+            timer=setInterval(function(){
+                //让每个属性发生变化，赋值给now对象中的每一项
+                for(var k in end){
+                    now[k]+=step[k];
+                }
+                //累计运动次数
+                count++;
+                //判断定时器是否结束
+                if(count>=maxCount){
+                    //拉终停表
+                    for(var k in end){
+                        now[k]=end[k];
+                    }
+                clearInterval(timer)
+                }
+                //赋值给对应元素对象属性
+                for(var k in now){
+                    //如果是不透明属性，不添加px单位
+                    if(k==="opacity"){
+                        ele.style[k]=now[k];
+                    }else{
+                        ele.style[k]=now[k]+"px";
+                    }
+                   
+                }
+            },interval);
+
+        }
+    </script>
+</body>
+</html>

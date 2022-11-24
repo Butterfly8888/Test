@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        //体会get请求
+        axios({
+            url:"/comments",
+            method:"post",
+            baseURL:"http://localhost:3000",
+            headers:{
+                "Content-Type": "application/json"
+            },  
+            timeout:1000,
+            data:{
+                "postId": 5,
+                "content":"better"
+            }
+            // params:{
+            //     id:1
+            // }
+        })
+        .then(function(res) {
+            console.log(res.data);
+        })
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

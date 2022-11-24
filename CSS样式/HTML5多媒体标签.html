@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form{
+            width: 500px;
+            height: 800px;
+            background-color: skyblue;
+            margin: 10px auto 0;
+        }
+    input{
+        position: relative;
+        top: 0;
+        left: 50%;
+        margin-left: -50px;
+        margin-top: 30px;
+       
+     }
+    </style>
+</head>
+<body>
+    <audio src="" controls="controls"></audio>
+    <audio controls>
+        <source src="" type="audio/mpeg">
+        <source src="" type="audio/ogg">
+        你的浏览器版本过低,不支持音频播放
+        <source>
+    </audio>
+    <div class="form">
+        <form  action="">
+            <input type="date" value=""><br>
+            <input type="email" required><br>
+            <input type="week"><br>
+            <input type="time"><br>
+            <input type="range"><br>
+            <input type="search" autocomplete="on" name="suosuo"><br>
+            <input type="color"><br>
+            城市：<input type="text" list="list01">
+            <datalist id="list01">
+                <option value="广州">gz</option>
+                <option value="深圳">sz</option>
+                <option value="北京">bj</option>
+
+            </datalist>
+            <br>
+            年龄：<input type="number" max="80" min="20"><br>
+            <input type="submit" value="提交">
+            
+        </form>
+    </div>
+</body>
+</html>

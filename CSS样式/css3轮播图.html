@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .carousel{
+            position: relative;
+            width: 846px;
+            height:472px;
+            border: 1px solid #000;
+            overflow: hidden;
+            margin: 100px 50%;
+            transform: translate(-423px);
+            float: left;
+            
+        }
+       .carousel .pic{
+        position: absolute;
+        left: 0;
+        width: 5000px;
+        height: 500px;
+        -webkit-animation: move 20s ease infinite; 
+        
+        }
+        .carousel .pic img{
+            float: left;
+            width: 846px;
+            height: 472px;
+           
+        }
+        @keyframes move{
+        0%{
+            left:0; 
+        }
+        33.33%{
+            left:-846px;
+        }
+       66.66%{
+            left:-1692px;
+        }
+        100%{
+            left:-2538px;
+        }
+    }
+       
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="pic">
+            <img src="images/1.png" alt="">
+            <img src="images/2.jpg" alt="">
+            <img src="images/3.png" alt="">
+            <img src="images/1.png" alt="">
+        </div>
+    </div>
+</body>
+</html>

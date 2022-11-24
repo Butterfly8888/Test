@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj={name:'zs',age:'18'}
+        // const{name}=obj;
+        // console.log(name)
+
+        const name="tom";
+        const{name:newname}=obj//命名冲突的解决办法
+        console.log(name)
+        console.log(newname)
+        //应用场景
+        const{log}=console
+        log("hahahaha")
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg{
+            background-color: pink
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="按钮"  id="btn">
+    <script>
+        //获取元素的操作
+        //定义一个获取元素的函数
+        // document.getElementById("btn");
+        function my$(id){
+           return document.getElementById(id);
+        }
+        var btn=my$("btn");
+        console.log(btn.style.backgroundColor);
+        //1.更改类名的方式去更改样式
+        //2.根据对象的style属性去操作样式
+        //获取元素
+    </script>
+</body>
+</html>

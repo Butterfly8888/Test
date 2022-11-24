@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    .box1 h1+p{
+        background-color: yellowgreen;
+    }
+/* 其他兄弟选择器 */
+    .box2 h2~p{
+        background-color: pink;
+    }
+</style>
+<body>
+    <div class="box1">
+        <h1>二级标题</h1>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+<span>------------------------------------------</span>
+    <div class="box2">
+        <p>段落</p>
+        <h2>二级标题</h2>
+        <div>内容</div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+</body>
+</html>

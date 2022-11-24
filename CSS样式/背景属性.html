@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100%;
+            height: 100vh;
+            /* padding: 30px;
+            border: 10px dashed #f00;
+            margin: 50px;
+            /* background-color: pink; */
+            background-image:url(bg.jpg); 
+            background-size: cover;
+            
+            background-repeat: no-repeat;  
+            background-color: rgba(255, 0, 0, 0.3);
+            
+        }
+        .box1{
+            width: 100%;
+            height: 100vh; 
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="点击" id="btn"><br>
+    <img src="./images/1.png" alt="图片" class="pic" id="pic">
+    <script>
+        var btn=document.getElementById("btn");
+        var pic=document.getElementById("pic");
+        //通过一个变量作为判断条件，变量值为1，认为加载的是a图片，如果为2,加载的是b
+        var num=1;
+
+        btn.onclick=function(){
+            //给图片换src属性值
+            //通过if语句判断，如果是1图片，就换成2图片
+            if(num===1){
+                pic.src="./images/2.jpg";
+                //数字要发生变化
+                num=2;
+            }else{
+                pic.src="./images/1.png";
+                num=1;
+            }
+            
+        };
+       
+    </script>
+</body>
+</html>

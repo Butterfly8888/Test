@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj={};
+        obj[true]="boolean";
+        obj[123]="number";
+        obj[{a:1}]="object1";
+        // console.log(Object.keys(obj));
+        // console.log(Object.values(obj));
+        //因为任何一种对象使用.tostring方法后,都会返回“[object Object]”字符串
+        // console.log(obj[{}])//得到object1
+        // console.log(obj['[object Object]'])//得到object1
+        //破坏了键值对一一映射的关系，ES5中Map结构就是为了解决此类问题
+        const map=new Map();
+        const a={a:1}
+        map.set(a,100)
+        // console.log(map);
+        // console.log(map.get(a));
+        //map.has()
+        //map.delete()
+        //map.clear()
+
+        map.forEach((value,key) => {
+            console.log(key,value);
+        })
+    </script>
+</body>
+</html>

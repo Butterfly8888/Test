@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p>段落</p>
+        <span> span 小盒子</span>
+    </div>
+    <script>
+        var box=document.getElementById("box");
+        //获取子节点
+        console.log(box.childNodes);//获取所有类型的子节点
+        console.log(box.children);//获取所有元素类型的子节点
+        console.log(box.firstChild);//获取所有类型子节点的第一个
+        console.log(box.lastChild);//获取所有类型子节点的最后一个
+        console.log(box.lastElementChild);//获取所有元素类型子节点的最后一个
+        //获取父级
+        console.log(box.parentNode);//获取父级节点
+        console.log(box.parentElement);//获取父级元素节点2
+    </script>
+</body>
+</html>

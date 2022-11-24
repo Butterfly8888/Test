@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul,ol{
+        list-style: none;
+    }
+    .banner{
+        position: relative;
+        width: 846px;
+        height:472px;
+        border: 1px solid #333;
+        margin: 20px auto;
+
+    }
+    .banner .pic li{
+        position: absolute; 
+        left: 0;
+        top: 0;
+        width: 846px;
+        height:472px;
+        display: none;
+    }
+    .banner .pic .current{
+        display: block;
+    }
+    /* 按钮 */
+
+    .banner .btn a{
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 40px;
+        margin-top: -20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        font: 20px/40px "宋体";
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .banner .btn .leftbtn{
+        left: 10px;
+    }
+    .banner .btn .rightbtn{
+        right: 10px;
+    }
+    .banner .btn a:hover{
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    /* 下标 */
+    .banner .sub{
+        position: absolute;
+        margin-left: -100px;
+        left: 50%;
+        bottom: 30px;
+        width: 200px;
+    }
+    .banner .sub li{
+        float: left;
+        width: 20px;
+        height: 20px;
+        margin-right: 20px;
+        background-color: rgba(255, 255, 255, 0.4);
+        font: 12px/20px "微软雅黑";
+        text-align: center;
+        color: #666;
+        cursor: pointer;
+    }
+    .banner .sub .current{
+        background-color: #fff;
+    }
+    </style>
+</head>
+<body>
+    <!-- 轮播图 -->
+   <div class="banner">
+    <!-- 图片部分 -->
+    <ul class="pic">
+        <li class="current"><img src="images/1.png" ></li>
+        <li><img src="images/2.jpg" ></li>
+        <li><img src="images/3.png" ></li>
+        <li><img src="images/4.png" ></li>
+        <li><img src="images/5.jpg" ></li>
+    </ul>
+    <!-- 按钮 -->
+    <div class="btn">
+        <a href="javascript:void(0);" class="leftbtn">&lt;</a>
+        <a href="javascript:void(0);" class="rightbtn">&gt;</a>
+    </div> 
+    <!-- 小圆点 -->
+    <ol class="sub">
+        <li class="current">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ol>
+   </div> 
+ 
+</body>
+</html>

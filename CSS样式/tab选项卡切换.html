@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            
+            height:255px;
+            width:500px;
+            margin:100px auto;
+            border:1px solid #0F0
+        }
+        .hd span{
+            /* float:left; */
+
+            display: inline-block;
+            width: 90px;
+            line-height: 40px;
+            background-color:pink;
+            text-align: center;
+            cursor: pointer;
+        }
+        .hd span.current {
+            background-color: skyblue;
+        }
+         .bd div{
+            height: 255px;
+            background-color: skyblue;;
+            display: none;
+         }
+         .bd  div.current{
+            display: block;
+         }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="hd" id="hd">
+           <span class="current">体育</span>
+           <span>娱乐</span>
+           <span>新闻</span>
+           <span>综合</span>
+        </div>
+        <div class="bd" id="bd">
+            <div class="current">我是体育模块</div>
+            <div>我是娱乐模块</div>
+            <div>我是新闻模块</div>
+            <div>我是综合模块</div>
+        </div>
+    </div>
+    <script src="common.js"></script>
+    <script>
+        //获取元素
+        var hd=my$("hd");
+        var bd=my$("bd");
+        var spans=hd.getElementsByTagName("span");
+        var divs=bd.getElementsByTagName("div");
+        for(var i=0 ; i<spans.length ;i++){
+            //给每一个span元素添加一个新的属性，记录自己在数组中的下标
+            spans[i].index=i;
+            spans[i].onmouseover = function () {
+                for(var j=0; j<spans.length ; j++){
+                    spans[j].className="";
+                    //由于divs中数据个数与span一样，所以可以在同一个循环进行排他操作
+                    divs[j].className="";
+                }
+                this.className="current";
+                //对应控制思想 
+                divs[this.index].className="current";
+            };
+        }
+    </script>
+</body>
+</html>
